@@ -97,8 +97,8 @@ android {
         applicationId "com.eth"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 5
-        versionName "0.05"
+        versionCode 6
+        versionName "0.06"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }

@@ -316,16 +316,16 @@ public class TestNative extends ReactContextBaseJavaModule {
 
                 transaction = ks.signTx(a_from, transaction, null); // 2. Why BigInt needed?
 
-                android.util.Log.d("", "Cost: " + transaction.getCost());
-                android.util.Log.d("", "GasPrice: " + transaction.getGasPrice());
-                android.util.Log.d("", "Gas: " + transaction.getGas());
-                android.util.Log.d("", "Nonce: " + transaction.getNonce());
-                android.util.Log.d("", "Value: " + transaction.getValue());
-                android.util.Log.d("", "Sig-Hash Hex: " + transaction.getSigHash().getHex());
-                android.util.Log.d("", "Hash Hex: " + transaction.getHash().getHex());
-                android.util.Log.d("", "Data-Length: " + transaction.getData().length);
-                android.util.Log.d("", "To: " + transaction.getTo().getHex());
-                android.util.Log.d("", "Sender: " + transaction.getFrom(new BigInt(0)).getHex());
+//                android.util.Log.d("", "Cost: " + transaction.getCost());
+//                android.util.Log.d("", "GasPrice: " + transaction.getGasPrice());
+//                android.util.Log.d("", "Gas: " + transaction.getGas());
+//                android.util.Log.d("", "Nonce: " + transaction.getNonce());
+//                android.util.Log.d("", "Value: " + transaction.getValue());
+//                android.util.Log.d("", "Sig-Hash Hex: " + transaction.getSigHash().getHex());
+//                android.util.Log.d("", "Hash Hex: " + transaction.getHash().getHex());
+//                android.util.Log.d("", "Data-Length: " + transaction.getData().length);
+//                android.util.Log.d("", "To: " + transaction.getTo().getHex());
+//                android.util.Log.d("", "Sender: " + transaction.getFrom(new BigInt(0)).getHex());
 
                 ethereumClient.sendTransaction(ctx, transaction);
                 cb.invoke("Success! TxHash: \n" + transaction.getSigHash().getHex());
