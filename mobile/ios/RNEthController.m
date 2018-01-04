@@ -61,8 +61,9 @@ RCT_EXPORT_METHOD(initEth)
   GethEnodes* bootstrap = GethNewEnodes(1);
   NSError *e;
   GethEnode* mainBootstrap = GethNewEnode(@"enode://d57927dede8c7292cc3f737c246eddd586efff0c0f5714f10f967006c118de83ae69bf84047c18bfb25d61c24110510ba4c575f203b225d90165879c5a069d60@85.25.34.76:30303?discport=30301", &e);
+  NSLog(@"ERR: %@", e);
   [bootstrap set:0 enode:mainBootstrap error:&e];
-  
+  NSLog(@"ERR: %@", e);
   GethNodeConfig* nc = GethNewNodeConfig();
   [nc setBootstrapNodes:bootstrap];
   [nc setEthereumNetworkID:15];
@@ -82,8 +83,10 @@ RCT_EXPORT_METHOD(initEth)
                            "}"];
   [nc setEthereumEnabled:true];
   
-  GethNode* node = GethNewNode(@"./.eth1", nc, &e);
+  GethNode* node = GethNewNode([NSHomeDirectory() stringByAppendingString:@"/Library/.eth1"], nc, &e);
+  NSLog(@"ERR: %@", e);
   [node start:&e];
+  NSLog(@"ERR: %@", e);
 }
 
 @end
