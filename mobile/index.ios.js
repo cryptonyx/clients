@@ -6,13 +6,21 @@
 
 import React, { Component } from 'react';
 import {
+  NativeModules,
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
+var ethController = NativeModules.RNEthController;
+
 export default class Eth extends Component {
+  
+  componentDidMount() {
+  	ethController.initEth();
+  }
+
   render() {
     return (
       <View style={styles.container}>
