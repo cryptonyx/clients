@@ -83,7 +83,7 @@ public class TestNative extends ReactContextBaseJavaModule {
 //                        "        \"eip158Block\": 0\n" +
 //                        "    },\n" +
 //                        "    \"difficulty\": \"400000\",\n" +
-//                        "    \"gasLimit\": \"210000\",\n" +
+//                        "    \"gasLimit\": \"2100000000\",\n" +
 //                        "    \"alloc\": {\n" +
 //                        "        \"36e5f859479ff980fe39d1490a158b2c89600043\": { \"balance\": \"300000000000000000000\" },\n" +
 //                        "        \"906d9a0de55ab73b64e2a29c3fc0b536160813d6\": { \"balance\": \"400000000000000000000\" }\n" +
