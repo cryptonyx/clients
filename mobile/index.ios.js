@@ -1,61 +1,69 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  NativeModules,
   AppRegistry,
-  StyleSheet,
   Text,
-  View
+  StyleSheet,
+  Image,
+  Button
 } from 'react-native';
+import { DrawerNavigator } from 'react-navigation';
 
-var ethController = NativeModules.RNEthController;
+import HomeScreen from './Screens/HomeScreen';
+import ScanScreen from './Screens/ScanScreen';
+import BlaScreen from './Screens/BlaScreen';
+import PickFileScreen from './Screens/PickFile';
 
-export default class Eth extends Component {
-  
-  componentDidMount() {
-  	ethController.initEth();
-  }
+
+// class HomeScreen extends React.Component {
+//   static navigationOptions = {
+//     title: 'Welcome',
+//   };
+//   render() {
+//     return <Text>Hello, Navigation!</Text>;
+//   }
+// }
+
+
+class MyNotificationsScreen extends React.Component {
+  static navigationOptions = {
+    drawerLabel: 'Notifications',
+    drawerIcon: ({ tintColor }) => (
+      <Image
+        source={require('./Screens/assets/menu.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Button
+        onPress={() => this.props.navigation.goBack()}
+        title="Go back home"
+      />
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  icon: {
+    width: 24,
+    height: 24,
   },
 });
 
+
+export default Eth = DrawerNavigator({
+  Home: { screen: HomeScreen },
+//   ScanScreen: {screen: ScanScreen },
+  BlaScreen: {screen: BlaScreen },
+//   PickFileScreen: {screen: PickFileScreen },
+//   Notifications: {
+//     screen: MyNotificationsScreen,
+//   },
+});
+
+// if you are using create-react-native-app you don't need this line
 AppRegistry.registerComponent('Eth', () => Eth);
+
+

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 
-@interface RNEthController : NSObject<RCTBridgeModule>
+@interface TestNative : NSObject<RCTBridgeModule>
 
 @end
 

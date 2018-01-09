@@ -6,11 +6,11 @@
 //  Copyright © 2018 Facebook. All rights reserved.
 //
 
-#import "RNEthController.h"
+#import "TestNative.h"
 #import <React/RCTLog.h>
 #import "Geth/Geth.h"
 
-@implementation RNEthController
+@implementation TestNative
 
 // To export a module named CalendarManager
 RCT_EXPORT_MODULE();
@@ -52,7 +52,17 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
 //Node node = Geth.newNode(getReactApplicationContext().getFilesDir() + "/.eth1", nc);
 //node.start();
 
-
+RCT_EXPORT_METHOD(subscribeForPeerCount)
+{
+}
+RCT_EXPORT_METHOD(subscribeForNewBlocks)
+{
+}
+RCT_EXPORT_METHOD(getAccounts:(RCTResponseSenderBlock)callback)
+{
+  // TODO:
+  callback(@[@"{\"accounts\": []}"]);
+}
 
 RCT_EXPORT_METHOD(initEth)
 {
