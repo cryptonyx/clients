@@ -1,0 +1,54 @@
+15network.json:
+
+{
+    "config": {
+        "chainId": 15,
+        "homesteadBlock": 0,
+        "eip155Block": 0,
+        "eip158Block": 0
+    },
+    "difficulty": "400000",
+    "gasLimit": "210000",
+    "alloc": {
+        "36e5f859479ff980fe39d1490a158b2c89600043": { "balance": "300000000000000000000" },
+        "906d9a0de55ab73b64e2a29c3fc0b536160813d6": { "balance": "400000000000000000000" }
+    }
+}
+
+
+geth --datadir /Users/User/go/custom init ~/Desktop/15network.json
+geth account new
+rm -rf /Users/User/go/custom1
+
+bootnode --genkey=boot.key
+bootnode --nodekey=boot.key
+
+// private bootnode
+geth --keystore /Users/User/Library/Ethereum/keystore/ --datadir /Users/User/go/custom --v5disc  --mine --minerthreads=1 --etherbase=0x36e5f859479ff980fe39d1490a158b2c89600043  --networkid 15 bootnode --nodekey=boot.key 
+
+
+// testnet
+screen -dmS geth geth --datadir go/custom/ --testnet --v5disc --lightserv 90 --syncmode "fast"  --port 30303  bootnode --nodekey=boot.key
+
+// private client
+geth --keystore /Users/User/Library/Ethereum/keystore/  --datadir /Users/User/go/custom1 --bootnodes "enode://ee5ddcb1d6c44a0adf153687f04b1bf966d2ca5a26bc8a95043508eddb4012f776b0f7eb1afd6db1908e6e699040235d84243986bd05a21c544de378551cac75@178.35.162.106:30303" --syncmode "light" --lightserv 90  --port 30299 --networkid 15 console
+
+// testnet client
+self=enode://5ef73f5af5c3178dc8939d1a8dee4450cb3b1c06cff112ea5d55dc3e9351c083088db1625229ba64144854de1e2b6b1b940eb7621b63a8af0a761a0df79ce9f7@85.25.34.76:30303
+
+
+web3.fromWei("500000378000000000001", "ether")
+eth.sendTransaction({from:"0x906d9a0de55ab73b64e2a29c3fc0b536160813d6", to: "0x36e5f859479ff980fe39d1490a158b2c89600043",value: 1})
+personal.unlockAccount("0x906d9a0de55ab73b64e2a29c3fc0b536160813d6")
+
+screen -dmS geth /usr/bin/geth --verbosity 3
+screen -x geth
+ctrl+a, d
+geth attach ipc:/some/path
+
+
+geth --datadir ./go/custom init ./15network.json
+geth --datadir ./go/custom bootnode --genkey=boot.key
+geth --datadir ./go/custom --v5disc  --mine --minerthreads=1 --etherbase=0x36e5f859479ff980fe39d1490a158b2c89600043 --lightserv 90 --verbosity 4 --networkid 15 bootnode --nodekey=boot.key
+
+
