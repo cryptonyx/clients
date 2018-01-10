@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+#import "Geth/Geth.h"
 
-@interface TestNative : NSObject<RCTBridgeModule>
+
+@interface TestNative : RCTEventEmitter <RCTBridgeModule, GethNewHeadHandler>
 
 @end
 

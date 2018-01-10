@@ -119,8 +119,8 @@ public class TestNative extends ReactContextBaseJavaModule {
 
 
 
-//            timer = new Timer();
-//            timer.scheduleAtFixedRate(timerTask, 0, 10000);
+            timer = new Timer();
+            timer.scheduleAtFixedRate(timerTask, 0, 10000);
         }
     }
 
@@ -238,6 +238,7 @@ public class TestNative extends ReactContextBaseJavaModule {
         }
 
     }
+
         @ReactMethod
     public void exportKey(String address, String pass1, String pass2, Callback cb) {
         try {
