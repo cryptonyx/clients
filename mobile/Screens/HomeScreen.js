@@ -8,7 +8,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 
 import ScanScreen from './ScanScreen';
-import BlaScreen from './BlaScreen';
+import AboutScreen from './AboutScreen';
 import PickFileScreen from './PickFile';
 import WalletsListScreen from './WalletsListScreen';
 import ImportWalletScreen from './ImportWalletScreen';
@@ -19,12 +19,14 @@ import TransactionsScreen from './TransactionsScreen';
 import ExecuteTransactionScreen from './ExecuteTransactionScreen'
 import TwoPasswordScreen from './TwoPasswordScreen'
 import OnePasswordScreen from './OnePasswordScreen'
+import EscrowListScreen from './EscrowListScreen'
 
 
 export default HS = StackNavigator({
   Home: {screen: WalletsListScreen },
   ScanScreen: {screen: ScanScreen },
-  BlaScreen: {screen: BlaScreen },
+  EscrowListScreen: {screen:EscrowListScreen},
+  AboutScreen: {screen: AboutScreen },
   PickFileScreen: {screen: PickFileScreen },
   ImportWalletScreen: {screen: ImportWalletScreen },
 //   ImportModal: {screen: ImportModal },

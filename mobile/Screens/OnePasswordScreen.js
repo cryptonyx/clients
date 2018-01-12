@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Text, TouchableHighlight, View, TextInput, TouchableOpacity } from 'react-native';
 import { Button } from 'react-native-elements'
 import Styles from './Styles'
-import loc from '../loc'
+import loc from './loc'
 
 export default class OnePasswordScreen extends Component {
 

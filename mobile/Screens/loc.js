@@ -16,6 +16,7 @@ import LocalizedStrings from 'react-native-localization';
  en:{
     // Common
     processing: 'processing',
+    add: "Add",
 
     // About
     about: 'About',
@@ -28,6 +29,9 @@ import LocalizedStrings from 'react-native-localization';
     usedGas: "Gas spent",
     age: "Age",
     transactions: 'Transactions',
+
+    // Escrow screen
+    escrow:"Escrow",
 
     // Transaction screen
     source: "Source",
@@ -65,6 +69,7 @@ import LocalizedStrings from 'react-native-localization';
  ru: {
     // Common
     processing: 'обработка',
+    add: "Добавить",
     
     // About
     about: 'О программе',
@@ -85,6 +90,8 @@ import LocalizedStrings from 'react-native-localization';
     gasLimit: "Лимит газа",
     password: "Пароль",
 
+    // Escrow screen
+    escrow:"Доверенные лица",
 
     // Review wallet screen
     removeTitle: "Введите пароль кошелька",

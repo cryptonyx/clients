@@ -10,13 +10,21 @@ import {
   Modal
 } from 'react-native';
 import Camera from 'react-native-camera';
-import loc from '../loc'
+import loc from './loc'
 
 
 export default class ScanScreen extends Component {
 
+	state = {
+		scanned: false
+	}
 	scanBarCode(d) {
-		console.log(d);
+		if(this.state.scanned) {
+			this.props.navigation.goBack();
+			return;
+		}
+		this.setState({scanned: true});
+		
 		this.props.navigation.state.params.callback(d.data)
 		this.props.navigation.goBack();
 	}

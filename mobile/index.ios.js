@@ -10,8 +10,9 @@ import { DrawerNavigator } from 'react-navigation';
 
 import HomeScreen from './Screens/HomeScreen';
 import ScanScreen from './Screens/ScanScreen';
-import BlaScreen from './Screens/BlaScreen';
+import AboutScreen from './Screens/AboutScreen';
 import PickFileScreen from './Screens/PickFile';
+import EscrowListScreen from './Screens/EscrowListScreen';
 
 
 // class HomeScreen extends React.Component {
@@ -55,8 +56,9 @@ const styles = StyleSheet.create({
 
 export default Eth = DrawerNavigator({
   Home: { screen: HomeScreen },
+  EscrowListScreen: {screen: EscrowListScreen},
 //   ScanScreen: {screen: ScanScreen },
-  BlaScreen: {screen: BlaScreen },
+  AboutScreen: {screen: AboutScreen },
 //   PickFileScreen: {screen: PickFileScreen },
 //   Notifications: {
 //     screen: MyNotificationsScreen,

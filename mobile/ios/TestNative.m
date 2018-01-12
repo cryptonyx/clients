@@ -10,6 +10,7 @@
 #import <React/RCTLog.h>
 
 @implementation TestNative
+bool nodeInitialized = false;
 GethContext* gCtx;
 GethNode* node;
 GethAccount* acc;
@@ -47,13 +48,18 @@ RCT_EXPORT_METHOD(subscribeForNewBlocks)
     gCtx = GethNewContext();
     [ethereumClient subscribeNewHead:gCtx handler:self buffer:100000 error:&e];
   } @catch (NSException *exception) {
-    RCTLogInfo(@"*** subscribe head exception %@", exception);
+    RCTLogError(@"*** subscribe head exception %@", exception);
   }
 }
 
 
 RCT_EXPORT_METHOD(getAccounts:(RCTResponseSenderBlock)callback)
 {
+  
+  // TODO:
+  callback(@[@"{\"accounts\": []}"]);
+  return;
+  
   NSError *e;
   GethEthereumClient* ethereumClient = [node getEthereumClient:&e];
   long long savedBlock = [[[NSUserDefaults new] objectForKey:@"MyPreferences"] longLongValue];
@@ -212,6 +218,11 @@ RCT_EXPORT_METHOD(sendEther:(NSString*)from  to:(NSString*)to gas:(NSString*)gas
 
 RCT_EXPORT_METHOD(initEth)
 {
+  if(nodeInitialized)
+    return;
+  
+  nodeInitialized = true;
+  
   GethSetVerbosity(6);
   
   NSError *e;

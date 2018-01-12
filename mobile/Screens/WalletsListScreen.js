@@ -8,7 +8,7 @@ import Canvas from 'react-native-canvas';
 // import keys from '../shim'
 import eth from 'ethjs-unit'
 import RNFS from 'react-native-fs';
-import loc from '../loc'
+import loc from './loc'
 
 
 class MyListItem extends React.PureComponent {

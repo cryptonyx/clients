@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, Alert, Button, View, NativeModules } from 'react-native';
-import loc from '../loc'
+import loc from './loc'
 import Styles from './Styles' 
 
-export default class Bla extends React.Component {
+export default class AboutScreen extends React.Component {
   
   static navigationOptions = {
     title: loc.about, 

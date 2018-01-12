@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements'
 import Canvas from 'react-native-canvas';
 import blockies from '../blockies'
 import Styles from './Styles'
-import loc from '../loc'  
+import loc from './loc'  
 
 export default class ReviewModal extends Component {
  

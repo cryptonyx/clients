@@ -8,7 +8,7 @@ import {
 import { ListItem } from 'react-native-elements';
 import eth from 'ethjs-unit'
 import Styles from './Styles'
-import loc from '../loc'
+import loc from './loc'
 
 class Transactions extends React.Component {
 

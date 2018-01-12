@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, NativeModules, Alert, ToastAndroid } from 'react-native';
 import Styles from './Styles'
 import { Button } from 'react-native-elements'
-import loc from '../loc'
+import loc from './loc'
 
 export default class WalletCreation extends Component {
 
