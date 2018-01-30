@@ -1195,8 +1195,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eth;
 				PRODUCT_NAME = Eth;
-				PROVISIONING_PROFILE = "6eb07352-f326-412f-a0d7-4095f0cdba42";
-				PROVISIONING_PROFILE_SPECIFIER = nyx_adhoc_provision;
+				PROVISIONING_PROFILE = "aa787b56-705e-4b83-be69-294f17b6de18";
+				PROVISIONING_PROFILE_SPECIFIER = nyx_production_provision;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
